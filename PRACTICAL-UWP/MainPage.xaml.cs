@@ -2,6 +2,7 @@
 using PRACTICAL_UWP.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -54,6 +55,30 @@ namespace PRACTICAL_UWP
             });
 */
             
+        }
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var student = new Contact()
+            {
+                name = txtName.Text,
+                phone_number = txtPhone.Text
+            };
+            var contactList = contactServices.Search(student);
+            if(contactList.Count != 0 )
+            {
+                ListContact.ItemsSource = contactList;
+            }
+            else
+            {
+                ContentDialog dialog = new ContentDialog();
+                dialog.Title = "Notify?";
+                dialog.Content = "No results!";
+                dialog.CloseButtonText = "Cancel";
+                await dialog.ShowAsync();
+            }
+
+
         }
     }
 }

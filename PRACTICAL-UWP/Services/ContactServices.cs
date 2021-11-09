@@ -64,5 +64,33 @@ namespace PRACTICAL_UWP.Services
 
             return contact;
         }
+        public List<Contact> Search(Contact contactSearch)
+        {
+            List<Contact> contact = new List<Contact>();
+            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, DatabaseConection.DatabaseName);
+            using (SqliteConnection db =
+               new SqliteConnection($"Filename={dbpath}"))
+            {
+                db.Open();
+
+                SqliteCommand selectCommand = new SqliteCommand
+                    ($"SELECT * from contacts WHERE name LIKE '%{contactSearch.name}%' AND phone_number LIKE '%{contactSearch.phone_number}%'", db);
+
+                SqliteDataReader query = selectCommand.ExecuteReader();
+
+                while (query.Read())
+                {
+
+                    var name = query.GetString(1);
+                    var phone_number = query.GetString(2);
+                    contact.Add(new Contact
+                    {
+                        name = name,
+                        phone_number = phone_number
+                    });
+                }
+            }
+            return contact;
+        }
     }
 }
