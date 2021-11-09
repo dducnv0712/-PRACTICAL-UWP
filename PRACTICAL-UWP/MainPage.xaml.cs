@@ -29,9 +29,13 @@ namespace PRACTICAL_UWP
         public MainPage()
         {
             this.InitializeComponent();
+            Loaded += LoadPage;
         }
 
-      
+        private void LoadPage(object sender, RoutedEventArgs e)
+        {
+            ListContact.ItemsSource = contactServices.GetAll();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
