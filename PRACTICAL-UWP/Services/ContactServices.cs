@@ -14,7 +14,7 @@ namespace PRACTICAL_UWP.Services
     {
         public static void Save(string inputText)
         {
-            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "contact_db.db");
             using (SqliteConnection db =
               new SqliteConnection($"Filename={dbpath}"))
             {
@@ -24,7 +24,7 @@ namespace PRACTICAL_UWP.Services
                 insertCommand.Connection = db;
 
                 // Use parameterized query to prevent SQL injection attacks
-                insertCommand.CommandText = "INSERT INTO MyTable VALUES (NULL, @Entry);";
+                insertCommand.CommandText = "INSERT INTO contact_db VALUES (@name, @phone);";
                 insertCommand.Parameters.AddWithValue("@Entry", inputText);
 
                 insertCommand.ExecuteReader();
@@ -37,14 +37,14 @@ namespace PRACTICAL_UWP.Services
         {
             List<Contact> contact = new List<Contact>();
 
-            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "contact_db.db");
             using (SqliteConnection db =
                new SqliteConnection($"Filename={dbpath}"))
             {
                 db.Open();
 
                 SqliteCommand selectCommand = new SqliteCommand
-                    ("SELECT Text_Entry from MyTable", db);
+                    ("SELECT * from contact_db", db);
 
                 SqliteDataReader query = selectCommand.ExecuteReader();
 
