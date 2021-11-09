@@ -11,10 +11,11 @@ namespace PRACTICAL_UWP.SQLiteConnect
 {
     public static class DatabaseConection
     {
+        public static string DatabaseName = "contact_db.db";
         public async static void InitializeDatabase()
         {
-            await ApplicationData.Current.LocalFolder.CreateFileAsync("contact_db.db", CreationCollisionOption.OpenIfExists);
-            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "contact_db.db");
+            await ApplicationData.Current.LocalFolder.CreateFileAsync(DatabaseName, CreationCollisionOption.OpenIfExists);
+            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, DatabaseName);
             using (SqliteConnection db =
                new SqliteConnection($"Filename={dbpath}"))
             {

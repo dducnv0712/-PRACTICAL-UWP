@@ -4,20 +4,63 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:PRACTICAL_UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:entities="using:PRACTICAL_UWP.Entities"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Border  BorderBrush="#61738B" BorderThickness="1" Padding=" 10">
-            <StackPanel Width="500" Height="260">
-                <TextBlock FontSize="20" FontWeight="Medium" Margin="0 0 0 30">Add Contect</TextBlock>
-                <Border  BorderBrush="#61738B" BorderThickness="1" />
 
-                <TextBox x:ConnectionId='2' Margin="0 010 0 20" x:Name="txtName" Header="Name"/>
-                <TextBox x:ConnectionId='3' Margin="0 0 0 20" x:Name="txtPhone" Header="Phone Number"/>
-                <Button Width="500">ADD Contect</Button>
-            </StackPanel>
-        </Border>
+    <Page.Resources>
+        <DataTemplate x:Key="ContactListViewTemplate"                              >
+            <Grid x:ConnectionId='3'>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Ellipse x:Name="Ellipse"
+                    Grid.RowSpan="2"
+                    Width ="32"
+                    Height="32"
+                    Margin="6"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
+                <TextBlock x:ConnectionId='5' Grid.Column="1"
+                                        
+                               
+                    Style="{ThemeResource BaseTextBlockStyle}"
+                    Margin="12,6,0,0"/>
+                <TextBlock x:ConnectionId='6'  Grid.Column="1"
+                    Grid.Row="1"
+                                                
+                               
+                    Style="{ThemeResource BodyTextBlockStyle}"
+                    Margin="12,0,0,6"/>
+            </Grid>
+
+        </DataTemplate>
+    </Page.Resources>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <StackPanel>
+            <Border  Width="500"  Height="280" BorderBrush="#61738B" BorderThickness="1" Padding=" 10">
+                <StackPanel >
+                    <TextBlock FontSize="20" FontWeight="Medium" Margin="0 0 0 30">Add Contect</TextBlock>
+                    <Border  BorderBrush="#61738B" BorderThickness="1" />
+
+                    <TextBox x:ConnectionId='8' Margin="0 010 0 20" x:Name="txtName" Header="Name"/>
+                    <TextBox x:ConnectionId='9' Margin="0 0 0 20" x:Name="txtPhone" Header="Phone Number"/>
+                    <Button x:ConnectionId='10' Width="500"                     >ADD Contect</Button>
+                </StackPanel>
+            </Border>
+            <Border Margin="0 30 0 0" BorderBrush="#61738B" BorderThickness="1" Padding=" 10">
+                <StackPanel Width="700" Height="400">
+                    <ListView x:ConnectionId='7' x:Name="ListContact" ItemTemplate="{StaticResource ContactListViewTemplate}"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
     </StackPanel>
 </Page>
 

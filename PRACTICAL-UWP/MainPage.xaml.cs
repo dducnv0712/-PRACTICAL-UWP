@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PRACTICAL_UWP.Entities;
+using PRACTICAL_UWP.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,28 @@ namespace PRACTICAL_UWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ContactServices contactServices = new ContactServices();
         public MainPage()
         {
             this.InitializeComponent();
+            Loaded += LoadedList;
+
+
+        }
+
+        private void LoadedList(object sender, RoutedEventArgs e)
+        {
+            ListContact.ItemsSource = contactServices.GetAll();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var student = new Contact()
+            {
+                name =txtName.Text,
+                phone_number = txtPhone.Text
+            };
+            contactServices.Save(student);
         }
     }
 }

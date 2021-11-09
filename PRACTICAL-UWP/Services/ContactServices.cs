@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using PRACTICAL_UWP.Entities;
+using PRACTICAL_UWP.SQLiteConnect;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,9 +13,10 @@ namespace PRACTICAL_UWP.Services
 {
     public class ContactServices
     {
-        public static void Save(string inputText)
+         
+        public  bool Save(Contact contact)
         {
-            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "contact_db.db");
+            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, DatabaseConection.DatabaseName);
             using (SqliteConnection db =
               new SqliteConnection($"Filename={dbpath}"))
             {
@@ -24,20 +26,20 @@ namespace PRACTICAL_UWP.Services
                 insertCommand.Connection = db;
 
                 // Use parameterized query to prevent SQL injection attacks
-                insertCommand.CommandText = "INSERT INTO contact_db VALUES (@name, @phone);";
-                insertCommand.Parameters.AddWithValue("@Entry", inputText);
-
+                insertCommand.CommandText = "INSERT INTO (name,phone_number) VALUES (@name, @phone_number);";
+                insertCommand.Parameters.AddWithValue("@name", contact.name);
+                insertCommand.Parameters.AddWithValue("@phone_number", contact.phone_number);
                 insertCommand.ExecuteReader();
-
                 db.Close();
             }
+            return false;
 
         }
-        public static List<Contact> GetData()
+        public List<Contact> GetAll()
         {
             List<Contact> contact = new List<Contact>();
 
-            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "contact_db.db");
+            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, DatabaseConection.DatabaseName);
             using (SqliteConnection db =
                new SqliteConnection($"Filename={dbpath}"))
             {
@@ -50,7 +52,9 @@ namespace PRACTICAL_UWP.Services
 
                 while (query.Read())
                 {
-                 
+
+                    var name = query.GetString(1);
+                    var phone_number = query.GetString(2);
                 }
             }
 

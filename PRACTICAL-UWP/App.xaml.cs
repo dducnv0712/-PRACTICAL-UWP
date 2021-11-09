@@ -32,8 +32,8 @@ namespace PRACTICAL_UWP
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            DatabaseConection.InitializeDatabase();
-
+/*            DatabaseConection.InitializeDatabase();
+*/
         }
 
         /// <summary>

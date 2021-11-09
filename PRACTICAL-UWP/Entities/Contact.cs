@@ -9,6 +9,6 @@ namespace PRACTICAL_UWP.Entities
     public class Contact
     {
         public string name { get; set; }
-        public string phoneNumber { get; set; }
+        public string phone_number { get; set; }
     }
 }
