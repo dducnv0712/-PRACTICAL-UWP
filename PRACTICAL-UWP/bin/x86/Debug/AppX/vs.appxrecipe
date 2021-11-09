@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-09T04:25:15.730</Modified>
+      <Modified>2021-11-09T04:30:00.770</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\PRACTICAL-UWP.exe">
       <PackagePath>entrypoint\PRACTICAL-UWP.exe</PackagePath>
-      <Modified>2021-11-09T04:25:14.958</Modified>
+      <Modified>2021-11-09T04:30:00.132</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ducbe\.nuget\packages\microsoft.data.sqlite.core\5.0.12\lib\netstandard2.0\Microsoft.Data.Sqlite.dll">
       <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
@@ -130,7 +130,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\Core\PRACTICAL-UWP.exe">
       <PackagePath>PRACTICAL-UWP.exe</PackagePath>
-      <Modified>2021-11-09T04:25:15.721</Modified>
+      <Modified>2021-11-09T04:30:00.765</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

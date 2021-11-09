@@ -26,7 +26,7 @@ namespace PRACTICAL_UWP.Services
                 insertCommand.Connection = db;
 
                 // Use parameterized query to prevent SQL injection attacks
-                insertCommand.CommandText = "INSERT INTO (name,phone_number) VALUES (@name, @phone_number);";
+                insertCommand.CommandText = "INSERT INTO contact (name,phone_number) VALUES (@name, @phone_number);";
                 insertCommand.Parameters.AddWithValue("@name", contact.name);
                 insertCommand.Parameters.AddWithValue("@phone_number", contact.phone_number);
                 insertCommand.ExecuteReader();
