@@ -50,14 +50,17 @@
                     <TextBlock FontSize="20" FontWeight="Medium" Margin="0 0 0 30">Add Contect</TextBlock>
                     <Border  BorderBrush="#61738B" BorderThickness="1" />
 
-                    <TextBox x:ConnectionId='8' Margin="0 010 0 20" x:Name="txtName" Header="Name"/>
-                    <TextBox x:ConnectionId='9' Margin="0 0 0 20" x:Name="txtPhone" Header="Phone Number"/>
-                    <Button x:ConnectionId='10' Width="500"                     >ADD Contect</Button>
+                    <TextBox x:ConnectionId='9' Margin="0 010 0 20" x:Name="txtName" Header="Name"/>
+                    <TextBox x:ConnectionId='10' Margin="0 0 0 20" x:Name="txtPhone" Header="Phone Number"/>
+                    <Button x:ConnectionId='11' Width="490"                     >ADD Contect</Button>
                 </StackPanel>
             </Border>
             <Border Margin="0 30 0 0" BorderBrush="#61738B" BorderThickness="1" Padding=" 10">
                 <StackPanel Width="700" Height="400">
-                    <ListView x:ConnectionId='7' x:Name="ListContact" ItemTemplate="{StaticResource ContactListViewTemplate}"/>
+                    <Button x:ConnectionId='7' Margin="0 0 0 20"                       >
+                        refresh
+                    </Button>
+                    <ListView x:ConnectionId='8' x:Name="ListContact" ItemTemplate="{StaticResource ContactListViewTemplate}"/>
                 </StackPanel>
             </Border>
         </StackPanel>

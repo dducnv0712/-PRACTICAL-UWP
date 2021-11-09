@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-09T04:13:39.223</Modified>
+      <Modified>2021-11-09T04:25:15.730</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\PRACTICAL-UWP.exe">
       <PackagePath>entrypoint\PRACTICAL-UWP.exe</PackagePath>
-      <Modified>2021-11-09T04:13:38.616</Modified>
+      <Modified>2021-11-09T04:25:14.958</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ducbe\.nuget\packages\microsoft.data.sqlite.core\5.0.12\lib\netstandard2.0\Microsoft.Data.Sqlite.dll">
       <PackagePath>Microsoft.Data.Sqlite.dll</PackagePath>
@@ -110,15 +110,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\PRACTICAL-UWP.xr.xml">
       <PackagePath>PRACTICAL-UWP.xr.xml</PackagePath>
-      <Modified>2021-11-09T03:53:57.418</Modified>
+      <Modified>2021-11-09T04:19:39.896</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-11-09T04:08:14.117</Modified>
+      <Modified>2021-11-09T04:25:14.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-11-09T04:08:14.117</Modified>
+      <Modified>2021-11-09T04:25:14.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -130,7 +130,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\C#_learning\PRACTICAL-UWP\PRACTICAL-UWP\bin\x86\Debug\Core\PRACTICAL-UWP.exe">
       <PackagePath>PRACTICAL-UWP.exe</PackagePath>
-      <Modified>2021-11-09T04:13:39.191</Modified>
+      <Modified>2021-11-09T04:25:15.721</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

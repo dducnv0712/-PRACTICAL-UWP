@@ -28,15 +28,9 @@ namespace PRACTICAL_UWP
         public MainPage()
         {
             this.InitializeComponent();
-            Loaded += LoadedList;
-
-
         }
 
-        private void LoadedList(object sender, RoutedEventArgs e)
-        {
-            ListContact.ItemsSource = contactServices.GetAll();
-        }
+      
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +40,20 @@ namespace PRACTICAL_UWP
                 phone_number = txtPhone.Text
             };
             contactServices.Save(student);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ListContact.ItemsSource = contactServices.GetAll();
+/*            List<Contact> contact = new List<Contact>();
+*/           /* ListContact.ItemsSource = contact;
+            contact.Add(new Contact
+            {
+                name = "Đức",
+                phone_number = "02154646565"
+            });
+*/
+            
         }
     }
 }

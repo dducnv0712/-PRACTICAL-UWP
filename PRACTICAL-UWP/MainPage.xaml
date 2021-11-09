@@ -52,11 +52,14 @@
 
                     <TextBox Margin="0 010 0 20" x:Name="txtName" Header="Name"/>
                     <TextBox Margin="0 0 0 20" x:Name="txtPhone" Header="Phone Number"/>
-                    <Button Width="500" Click="Button_Click">ADD Contect</Button>
+                    <Button Width="490" Click="Button_Click">ADD Contect</Button>
                 </StackPanel>
             </Border>
             <Border Margin="0 30 0 0" BorderBrush="#61738B" BorderThickness="1" Padding=" 10">
                 <StackPanel Width="700" Height="400">
+                    <Button Margin="0 0 0 20" Click="Button_Click_1">
+                        refresh
+                    </Button>
                     <ListView x:Name="ListContact" ItemTemplate="{StaticResource ContactListViewTemplate}"/>
                 </StackPanel>
             </Border>

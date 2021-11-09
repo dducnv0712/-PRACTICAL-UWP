@@ -30,7 +30,6 @@ namespace PRACTICAL_UWP.Services
                 insertCommand.Parameters.AddWithValue("@name", contact.name);
                 insertCommand.Parameters.AddWithValue("@phone_number", contact.phone_number);
                 insertCommand.ExecuteReader();
-                db.Close();
             }
             return false;
 
@@ -55,6 +54,11 @@ namespace PRACTICAL_UWP.Services
 
                     var name = query.GetString(1);
                     var phone_number = query.GetString(2);
+                    contact.Add(new Contact
+                    {
+                        name =name,
+                        phone_number = phone_number
+                    });
                 }
             }
 
