@@ -22,8 +22,8 @@ namespace PRACTICAL_UWP.SQLiteConnect
                 db.Open();
 
                 var tableCommand = "CREATE TABLE IF NOT " +
-                    "EXISTS contact (id INTEGER PRIMARY KEY, " +
-                    "name NVARCHAR(255))" + "phone_number NVACHAR(255) AUTOINCREMENT";
+                    "EXISTS contact (id INTEGER PRIMARY KEY, AUTOINCREMENT" +
+                    "name NVARCHAR(255))" + "phone_number NVACHAR(255)";
                 SqliteCommand createTable = new SqliteCommand(tableCommand, db);
                 createTable.ExecuteReader();
             }
