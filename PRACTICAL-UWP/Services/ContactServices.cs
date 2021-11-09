@@ -46,7 +46,7 @@ namespace PRACTICAL_UWP.Services
                 db.Open();
 
                 SqliteCommand selectCommand = new SqliteCommand
-                    ("SELECT * from contact_db", db);
+                    ("SELECT * from contact", db);
 
                 SqliteDataReader query = selectCommand.ExecuteReader();
 
